@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بوابة الوظائف والفرص - جمعية روّاد الخير للإغاثة والتنمية</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <!-- Google Font: Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            cairo: ['Cairo', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            amberOrange: {
+              500: '#f97316',
+              600: '#ea580c',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+    }
+    .vacancy-card.active-vacancy {
+      border-color: #0284c7 !important;
+      background-color: #f0f9ff !important;
+      box-shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.15) !important;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col justify-between selection:bg-primary-600 selection:text-white">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-primary-900 via-primary-800 to-slate-900 text-white text-xs py-2 px-4 text-center font-bold">
+    <span>📢 إعلان توظيف وتطوع لعام 2026 - جمعية روّاد الخير للإغاثة والتنمية</span>
+  </div>
+
+  <!-- Navbar -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 py-3.5 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-primary-700 to-amberOrange-500 flex items-center justify-center text-white shadow-md shadow-primary-700/20">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-base font-black text-slate-900 leading-tight">جمعية روّاد الخير للإغاثة والتنمية</h1>
+          <p class="text-[11px] text-slate-500 font-bold">Rowad Al-Khair Relief & Development</p>
+        </div>
+      </div>
+
+      <a href="#applicationSection" class="px-3.5 py-1.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white text-xs font-bold transition shadow-sm">
+        تعبئة الطلب مباشرة ↓
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Body -->
+  <main class="max-w-4xl mx-auto w-full px-4 py-8 flex-grow space-y-10">
+
+    <!-- Hero Headline -->
+    <div class="text-center space-y-2 max-w-2xl mx-auto">
+      <span class="inline-block px-3 py-1 rounded-full bg-primary-50 text-primary-700 text-xs font-extrabold border border-primary-200">
+        فرص عمل ميدانية وإدارية
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-900">اختر الشاغر المناسب وقدّم خلال ثوانٍ</h2>
+      <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
+        انقر على أحد الشواغر المتاحة أدناه ليتم اختياره تلقائياً في الاستمارة، ثم أدخل بياناتك الأساسية للتواصل السريع معك.
+      </p>
+    </div>
+
+    <!-- Featured Vacancy Cards (Clickable) -->
+    <div class="space-y-3">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xs font-black text-slate-400 uppercase tracking-wider">الشواغر الأكثر طلباً حالياً:</h3>
+        <span class="text-xs text-primary-600 font-bold">انقر على الوظيفة لتحديدها مباشرة</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <!-- Vacancy 1 -->
+        <div class="vacancy-card active-vacancy p-4 rounded-3xl border-2 border-primary-600 bg-primary-50/50 cursor-pointer transition hover:shadow-md space-y-2" data-job="منسق ومتابع ميداني">
+          <div class="flex items-center justify-between">
+            <span class="w-8 h-8 rounded-xl bg-primary-100 text-primary-700 flex items-center justify-center font-bold text-sm">📍</span>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">مطلوب فوراً</span>
+          </div>
+          <h4 class="font-black text-slate-900 text-sm">منسق ومتابع ميداني</h4>
+          <p class="text-[11px] text-slate-500 line-clamp-2">الإشراف الميداني وتنسيق توزيع الطرود والمساعدات الإنسانية والتواصل مع الأهالي.</p>
+          <div class="text-[10px] font-bold text-primary-700 pt-1 flex items-center gap-1">
+            <span>محدد للتقديم</span>
+            <span>✓</span>
+          </div>
+        </div>
+
+        <!-- Vacancy 2 -->
+        <div class="vacancy-card p-4 rounded-3xl border border-slate-200 bg-white cursor-pointer transition hover:border-slate-300 hover:shadow-md space-y-2" data-job="أخصائي رصد ودعم مجتمعي">
+          <div class="flex items-center justify-between">
+            <span class="w-8 h-8 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-sm">📋</span>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">دوام كامل/جزئي</span>
+          </div>
+          <h4 class="font-black text-slate-900 text-sm">أخصائي دعم مجتمعي</h4>
+          <p class="text-[11px] text-slate-500 line-clamp-2">رصد الاحتياجات الإنسانية العاجلة، إعداد التقارير الأولية، وتنظيم الفعاليات الإغاثية.</p>
+          <div class="text-[10px] font-bold text-slate-400 pt-1 flex items-center gap-1">
+            <span>انقر للاختيار</span>
+            <span>○</span>
+          </div>
+        </div>
+
+        <!-- Vacancy 3 -->
+        <div class="vacancy-card p-4 rounded-3xl border border-slate-200 bg-white cursor-pointer transition hover:border-slate-300 hover:shadow-md space-y-2" data-job="مسؤول إعلام وتوثيق رقمي">
+          <div class="flex items-center justify-between">
+            <span class="w-8 h-8 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-sm">📷</span>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">ميداني / مرن</span>
+          </div>
+          <h4 class="font-black text-slate-900 text-sm">إعلام وتوثيق محتوى</h4>
+          <p class="text-[11px] text-slate-500 line-clamp-2">التصوير الفوتوغرافي والفيديو لأنشطة التوزيع وإعداد التغطيات والتقارير المرئية.</p>
+          <div class="text-[10px] font-bold text-slate-400 pt-1 flex items-center gap-1">
+            <span>انقر للاختيار</span>
+            <span>○</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Application Form Card -->
+    <div id="applicationSection" class="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl shadow-slate-200/50 space-y-6 scroll-mt-24">
+      
+      <div class="border-b border-slate-100 pb-4 flex items-center justify-between">
+        <div>
+          <h3 class="text-lg font-black text-slate-900">استمارة التقديم المباشر</h3>
+          <p class="text-xs text-slate-500">متطلبات سريعة وخفيفة للتواصل وتحديد موعد المقابلة</p>
+        </div>
+        <span class="text-xs font-bold text-primary-700 bg-primary-50 px-3 py-1 rounded-full border border-primary-200">
+          نموذج خفيف
+        </span>
+      </div>
+
+      <form id="vacancyForm" class="space-y-5" novalidate>
+        
+        <!-- Auto-selected Job Position Banner -->
+        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold text-slate-500">الوظيفة المحددة حالياً:</span>
+            <strong id="displaySelectedJob" class="text-sm font-black text-primary-700">منسق ومتابع ميداني</strong>
+          </div>
+          <select id="jobSelector" name="jobSelector" class="text-xs font-bold border border-slate-300 rounded-xl px-2.5 py-1.5 bg-white text-slate-700 outline-none focus:border-primary-600">
+            <option value="منسق ومتابع ميداني">منسق ومتابع ميداني</option>
+            <option value="أخصائي رصد ودعم مجتمعي">أخصائي دعم مجتمعي</option>
+            <option value="مسؤول إعلام وتوثيق رقمي">إعلام وتوثيق محتوى</option>
+            <option value="مسؤول إدارة ومشاريع">إدارة مشاريع ولوجستيات</option>
+            <option value="محاسب وإداري مالي">محاسب وإداري مالي</option>
+            <option value="طلب تطوع عام">طلب تطوع أو تخصص آخر</option>
+          </select>
+        </div>
+
+        <!-- Full Name -->
+        <div>
+          <label for="fullName" class="block text-xs font-extrabold text-slate-700 mb-1.5">
+            الاسم الكامل <span class="text-rose-500">*</span>
+          </label>
+          <input type="text" id="fullName" name="fullName" required placeholder="اكتب اسمك الثلاثي أو الرباعي" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 outline-none transition text-sm">
+          <p class="text-xs text-rose-500 hidden mt-1" id="err-fullName">يرجى كتابة الاسم</p>
+        </div>
+
+        <!-- Phone & Location -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="phone" class="block text-xs font-extrabold text-slate-700 mb-1.5">
+              رقم الهاتف / الواتساب <span class="text-rose-500">*</span>
+            </label>
+            <input type="tel" id="phone" name="phone" required placeholder="059xxxxxxx أو 056xxxxxxx" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 outline-none transition text-sm">
+            <p class="text-xs text-rose-500 hidden mt-1" id="err-phone">يرجى إدخال رقم هاتف صحيح</p>
+          </div>
+
+          <div>
+            <label for="governorate" class="block text-xs font-extrabold text-slate-700 mb-1.5">
+              مكان السكن الحالي <span class="text-rose-500">*</span>
+            </label>
+            <select id="governorate" name="governorate" required class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 outline-none transition text-sm bg-white">
+              <option value="">-- اختر المحافظة --</option>
+              <option value="غزة">غزة</option>
+              <option value="شمال غزة">شمال غزة</option>
+              <option value="دير البلح (الوسطى)">دير البلح (الوسطى)</option>
+              <option value="خان يونس">خان يونس</option>
+              <option value="رفح">رفح</option>
+              <option value="الضفة الغربية">الضفة الغربية</option>
+              <option value="أخرى">أخرى</option>
+            </select>
+            <p class="text-xs text-rose-500 hidden mt-1" id="err-governorate">يرجى اختيار المحافظة</p>
+          </div>
+        </div>
+
+        <!-- Education & Experience (Short Optional) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="education" class="block text-xs font-extrabold text-slate-700 mb-1.5">
+              المؤهل أو التخصص (اختياري)
+            </label>
+            <input type="text" id="education" name="education" placeholder="مثال: بكالوريوس، دبلوم، خريج، ثانوي..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 outline-none transition text-sm">
+          </div>
+
+          <div>
+            <label for="availability" class="block text-xs font-extrabold text-slate-700 mb-1.5">
+              الاستعداد للبدء
+            </label>
+            <select id="availability" name="availability" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 outline-none transition text-sm bg-white">
+              <option value="فوري">مباشرة فورية</option>
+              <option value="خلال أسبوع">خلال أسبوع</option>
+              <option value="أوقات جزئية محددة">أوقات وساعات محددة</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Notes / Summary -->
+        <div>
+          <label for="brief" class="block text-xs font-extrabold text-slate-700 mb-1.5">
+            نبذة سريعة عن خبرتك السابقة أو مهاراتك (اختياري)
+          </label>
+          <textarea id="brief" name="brief" rows="2" placeholder="أخبرنا باختصار عن أي خبرة سابقة أو ما يميزك..." class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:border-primary-600 focus:ring-2 focus:ring-primary-600/20 outline-none transition text-sm"></textarea>
+        </div>
+
+        <!-- Quick Attachment (Optional) -->
+        <div>
+          <label class="block text-xs font-extrabold text-slate-700 mb-1.5">
+            رابط أو ملف السيرة الذاتية (اختياري)
+          </label>
+          <div class="flex flex-col sm:flex-row gap-2.5">
+            <input type="url" id="cvLink" name="cvLink" placeholder="رابط Google Drive أو ملفك الشخصي..." class="flex-grow px-3.5 py-2 rounded-xl border border-slate-300 focus:border-primary-600 outline-none text-xs text-left" dir="ltr">
+            <label class="flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-slate-50 border border-dashed border-slate-300 hover:border-primary-600 cursor-pointer text-xs font-bold text-slate-600 transition">
+              <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg>
+              <span id="fileText">أو ملف PDF</span>
+              <input type="file" id="cvFile" accept=".pdf,.doc,.docx" class="hidden">
+            </label>
+          </div>
+          <p id="fileAttachedMsg" class="text-xs text-primary-700 font-bold hidden mt-1"></p>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="pt-3">
+          <button type="submit" id="submitBtn" class="w-full py-3.5 px-6 rounded-2xl bg-primary-600 hover:bg-primary-700 text-white font-black text-sm shadow-lg shadow-primary-600/30 transition transform active:scale-[0.99] flex items-center justify-center gap-2">
+            <span>تأكيد إرسال الطلب</span>
+            <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </button>
+        </div>
+
+      </form>
+
+      <!-- Success Screen -->
+      <div id="successBox" class="hidden text-center py-6 space-y-4">
+        <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-3xl flex items-center justify-center mx-auto shadow-inner">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        </div>
+
+        <div class="space-y-1">
+          <span class="inline-block px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-black border border-emerald-200">
+            تم استلام الطلب بنجاح
+          </span>
+          <h3 class="text-xl font-black text-slate-900">شكراً لتقديمك في جمعية روّاد الخير</h3>
+          <p class="text-xs text-slate-500 max-w-sm mx-auto leading-relaxed">
+            تم حفظ طلبك وسيتم التواصل معك مباشرة عند بدء مرحلة المقابلات الميدانية.
+          </p>
+        </div>
+
+        <div class="p-3 bg-slate-50 border border-slate-200 rounded-2xl inline-block text-xs">
+          <span class="text-slate-400 block mb-0.5">الرقم المرجعي:</span>
+          <strong id="refCode" class="text-sm font-mono text-primary-800">ROWAD-2026-1482</strong>
+        </div>
+
+        <div>
+          <button type="button" id="resetBtn" class="px-5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition">
+            تقديم طلب آخر
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- In-page Toast -->
+  <div id="toast" class="fixed bottom-4 left-4 z-50 bg-slate-900 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-xl transform translate-y-10 opacity-0 transition-all pointer-events-none"></div>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-400">
+    جميع الحقوق محفوظة © جمعية روّاد الخير للإغاثة والتنمية 2026
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const form = document.getElementById('vacancyForm');
+    const successBox = document.getElementById('successBox');
+    const fullName = document.getElementById('fullName');
+    const phone = document.getElementById('phone');
+    const governorate = document.getElementById('governorate');
+    const jobSelector = document.getElementById('jobSelector');
+    const displaySelectedJob = document.getElementById('displaySelectedJob');
+    const cvFile = document.getElementById('cvFile');
+    const fileText = document.getElementById('fileText');
+    const fileAttachedMsg = document.getElementById('fileAttachedMsg');
+    const toast = document.getElementById('toast');
+
+    function showToast(msg) {
+      toast.innerText = msg;
+      toast.classList.remove('translate-y-10', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-10', 'opacity-0');
+      }, 3500);
+    }
+
+    // Vacancy cards click behavior
+    document.querySelectorAll('.vacancy-card').forEach(card => {
+      card.addEventListener('click', function() {
+        document.querySelectorAll('.vacancy-card').forEach(c => {
+          c.className = 'vacancy-card p-4 rounded-3xl border border-slate-200 bg-white cursor-pointer transition hover:border-slate-300 hover:shadow-md space-y-2';
+          const indicator = c.querySelector('div:last-child');
+          if (indicator) {
+            indicator.className = 'text-[10px] font-bold text-slate-400 pt-1 flex items-center gap-1';
+            indicator.innerHTML = '<span>انقر للاختيار</span><span>○</span>';
+          }
+        });
+
+        this.className = 'vacancy-card active-vacancy p-4 rounded-3xl border-2 border-primary-600 bg-primary-50/50 cursor-pointer transition hover:shadow-md space-y-2';
+        const indicator = this.querySelector('div:last-child');
+        if (indicator) {
+          indicator.className = 'text-[10px] font-bold text-primary-700 pt-1 flex items-center gap-1';
+          indicator.innerHTML = '<span>محدد للتقديم</span><span>✓</span>';
+        }
+
+        const selected = this.getAttribute('data-job');
+        jobSelector.value = selected;
+        displaySelectedJob.innerText = selected;
+        showToast('تم تحديد الشاغر: ' + selected);
+      });
+    });
+
+    jobSelector.addEventListener('change', function() {
+      displaySelectedJob.innerText = this.value;
+    });
+
+    // File input
+    cvFile.addEventListener('change', function() {
+      if (this.files && this.files[0]) {
+        const name = this.files[0].name;
+        fileText.innerText = 'تم الاختيار ✓';
+        fileAttachedMsg.innerText = 'الملف المرفق: ' + name;
+        fileAttachedMsg.classList.remove('hidden');
+        showToast('تم إرفاق: ' + name);
+      }
+    });
+
+    // Submit
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      let valid = true;
+
+      if (!fullName.value.trim() || fullName.value.trim().length < 3) {
+        document.getElementById('err-fullName').classList.remove('hidden');
+        fullName.classList.add('border-rose-500');
+        valid = false;
+      } else {
+        document.getElementById('err-fullName').classList.add('hidden');
+        fullName.classList.remove('border-rose-500');
+      }
+
+      if (!phone.value.trim() || phone.value.trim().length < 9) {
+        document.getElementById('err-phone').classList.remove('hidden');
+        phone.classList.add('border-rose-500');
+        valid = false;
+      } else {
+        document.getElementById('err-phone').classList.add('hidden');
+        phone.classList.remove('border-rose-500');
+      }
+
+      if (!governorate.value) {
+        document.getElementById('err-governorate').classList.remove('hidden');
+        governorate.classList.add('border-rose-500');
+        valid = false;
+      } else {
+        document.getElementById('err-governorate').classList.add('hidden');
+        governorate.classList.remove('border-rose-500');
+      }
+
+      if (!valid) {
+        showToast('يرجى تعبئة الحقول الإلزامية المطلوبة');
+        return;
+      }
+
+      const randomNum = Math.floor(1000 + Math.random() * 9000);
+      document.getElementById('refCode').innerText = `ROWAD-2026-${randomNum}`;
+
+      form.classList.add('hidden');
+      successBox.classList.remove('hidden');
+      showToast('تم إرسال الطلب بنجاح!');
+    });
+
+    // Reset
+    document.getElementById('resetBtn').addEventListener('click', function() {
+      form.reset();
+      fileText.innerText = 'أو ملف PDF';
+      fileAttachedMsg.classList.add('hidden');
+      successBox.classList.add('hidden');
+      form.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
